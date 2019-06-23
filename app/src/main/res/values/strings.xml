@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">achida Music Player</string>
+    <string name="song_title">Song title</string>
+    <string name="song_name_view">Songs</string>
+    <string name="artist_name_view">Artists</string>
+    <string name="artist_name">Artist\'s name</string>
+    <string name="album_name_view">Albums</string>
+    <string name="album_name">Album\'s name</string>
+    <string name="playlists_name_view">Playlists</string>
+    <string name="playlists_name">Playlist\'s name</string>
+    <string name="now_playing_view">Now playing</string>
+    <string name="write_review">Write review</string>
+    <string name="write_review_title">Provide a title</string>
+    <string name="write_review_body">Write your review here</string>
+    <string name="buy_online">Buy online</string>
+    <string name="search">Search</string>
+    <string name="song_lyric">Chiquitita, tell me what\'s wrong\n
+You\'re enchained by your own sorrow\n
+In your eyes there is no hope for tomorrow\n
+How I hate to see you like this\n
+There is no way you can deny it\n
+I can see that you\'re oh so sad, so quiet\n
+Chiquitita, tell me the truth\n
+I\'m a shoulder you can cry on\n
+Your best friend, I\'m the one you must rely on\n
+You were always sure of yourself\n
+Now I see you\'ve broken a feather\n
+I hope we can patch it up together\n
+Chiquitita, you and I know\n
+How the heartaches come and they go and the scars they\'re leaving\n
+You\'ll be dancing once again and the pain will end\n
+You will have no time for grieving\n
+Chiquitita, you and I cry\n
+But the sun is still in the sky and shining above you\n
+Let me hear you sing once more like you did before\n
+Sing a new song, Chiquitita\n
+Try…\n</string>
+</resources>
