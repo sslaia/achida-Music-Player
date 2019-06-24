@@ -1,6 +1,8 @@
 package com.blogspot.sslaia.achidamusicplayer;
 
-public class Song  {
+import java.util.Comparator;
+
+public class Song {
     // Song title
     private String mSongTitle;
 
@@ -62,4 +64,47 @@ public class Song  {
     public int getLyricFileName() {
         return mLyricFileName;
     }
+
+    // Comparator for sorting the song list by artist name
+    public static Comparator<Song> artistNameComparator = new Comparator<Song>() {
+
+        public int compare(Song s1, Song s2) {
+            String artistName1 = s1.getArtistName().toUpperCase();
+            String artistName2 = s2.getArtistName().toUpperCase();
+
+            //ascending order
+            return artistName1.compareTo(artistName2);
+
+            //descending order
+            //return artistName2.compareTo(artistName1);
+        }};
+
+    // Comparator for sorting the song list by album name
+    public static Comparator<Song> albumNameComparator = new Comparator<Song>() {
+
+        public int compare(Song s1, Song s2) {
+            String albumName1 = s1.getAlbumName().toUpperCase();
+            String albumName2 = s2.getAlbumName().toUpperCase();
+
+            //ascending order
+            return albumName1.compareTo(albumName2);
+
+            //descending order
+            //return albumName2.compareTo(albumName1);
+        }};
+
+    // Comparator for sorting the song list by song name
+    public static Comparator<Song> songTitleComparator = new Comparator<Song>() {
+
+        public int compare(Song s1, Song s2) {
+            String songTitle1 = s1.getSongTitle().toUpperCase();
+            String songTitle2 = s2.getSongTitle().toUpperCase();
+
+            //ascending order
+            return songTitle1.compareTo(songTitle2);
+
+            //descending order
+            //return songTitle2.compareTo(songTitle1);
+        }};
+
 }

@@ -15,6 +15,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     // This method is necessary to pass the score to other activity
@@ -27,26 +30,26 @@ public class MainActivity extends AppCompatActivity {
 
         // Create an ArrayList of songs
         final ArrayList<Song> songs = new ArrayList<>();
-        songs.add(new Song("Andante, andante", "ABBA", "ABBA Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Angel eyes", "ABBA", "ABBA Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Move on", "ABBA", "ABBA Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Dancing queen", "ABBA", "ABBA Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Chiquitita", "ABBA", "ABBA Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Does your mother know", "ABBA", "ABBA Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("One man one woman", "ABBA", "ABBA Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("People need love", "ABBA", "ABBA Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Our last summer", "ABBA", "ABBA For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Gimme gimme gimme", "ABBA", "ABBA For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Happy new year", "ABBA", "ABBA For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Hasta manana", "ABBA", "ABBA For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("SOS", "ABBA", "ABBA Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Super trouper", "ABBA", "ABBA  Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Hole in your soul", "ABBA", "ABBA  Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Take a chance", "ABBA", "ABBA  Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Honey, honey", "ABBA", "ABBA Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("Thank you for the music", "ABBA", "ABBA Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("I do, I do, I do, I do", "ABBA", "ABBA Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
-        songs.add(new Song("I have a dream", "ABBA", "ABBA Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Andante, andante", "ABBA", "Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Angel eyes", "ABBA", "Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Move on", "ABBA", "Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Dancing queen", "ABBA", "Giant Collection", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Chiquitita", "ABBA", "Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Does your mother know", "ABBA", "Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("One man one woman", "ABBA", "Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("People need love", "ABBA", "Gold", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Our last summer", "ABBA", "For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Gimme gimme gimme", "ABBA", "For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Happy new year", "ABBA", "For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Hasta manana", "ABBA", "For Ever Young", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("SOS", "ABBA", "Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Super trouper", "ABBA", "Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Hole in your soul", "ABBA", "Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Take a chance", "ABBA", "Super Truper", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Honey, honey", "ABBA", "Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("Thank you for the music", "ABBA", "Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("I do, I do, I do, I do", "ABBA", "Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
+        songs.add(new Song("I have a dream", "ABBA", "Thank You For the Music", R.drawable.achida_music, R.raw.abba_chiquitita, R.raw.lyric_text));
 
         final SongAdapter adapter = new SongAdapter(this, songs);
 
@@ -74,25 +77,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // For when search form is used
-        EditText songSearch = findViewById(R.id.search_form);
-        songSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void onTextChanged(CharSequence searchInput, int arg1, int arg2, int arg3) {
-                adapter.getFilter().filter(searchInput);
-                listView.setAdapter(adapter);
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-                // Nothing
-            }
-            @Override
-            public void afterTextChanged(Editable arg0) {
-                // Nothing
-            }
-
-        });
+//        // For when search form is used
+//        EditText songSearch = findViewById(R.id.search_form);
+//        songSearch.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void onTextChanged(CharSequence searchInput, int arg1, int arg2, int arg3) {
+//                adapter.getFilter().filter(searchInput);
+//                listView.setAdapter(adapter);
+//            }
+//
+//            @Override
+//            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
+//                // Nothing
+//            }
+//            @Override
+//            public void afterTextChanged(Editable arg0) {
+//                // Nothing
+//            }
+//
+//        });
 
 
 
@@ -123,17 +126,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         // The method will be executed when ARTISTS area is clicked
         TextView artists = findViewById(R.id.sort_artists);
         artists.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Sort the songs based on artist name
+                Collections.sort(songs, Song.artistNameComparator);
 
-                // Notify the mode we are in
-                Toast.makeText(MainActivity.this, "Sorted base on Artists", Toast.LENGTH_SHORT).show();
-
-//                // Sort the songs based on artist name
-//                sortByArtists();
+                final SongAdapter adapter = new SongAdapter(MainActivity.this, songs);
+                final ListView listView = findViewById(R.id.song_list_view);
+                listView.setAdapter(adapter);
             }
         });
 
@@ -142,12 +146,26 @@ public class MainActivity extends AppCompatActivity {
         albums.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // Sort the songs based on album name
+                Collections.sort(songs, Song.albumNameComparator);
 
-                // Notify the mode we are in
-                Toast.makeText(MainActivity.this, "Sorted base on Albums", Toast.LENGTH_SHORT).show();
+                final SongAdapter adapter = new SongAdapter(MainActivity.this, songs);
+                final ListView listView = findViewById(R.id.song_list_view);
+                listView.setAdapter(adapter);
+            }
+        });
 
-//                // Sort the songs based on album name
-//                sortByAlbums();
+        // The method will be executed when SONG area is clicked
+        TextView songTitle = findViewById(R.id.sort_songs);
+        songTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Sort the songs based on song title
+                Collections.sort(songs, Song.songTitleComparator);
+
+                final SongAdapter adapter = new SongAdapter(MainActivity.this, songs);
+                final ListView listView = findViewById(R.id.song_list_view);
+                listView.setAdapter(adapter);
             }
         });
 
