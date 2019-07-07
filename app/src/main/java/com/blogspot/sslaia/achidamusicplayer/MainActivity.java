@@ -4,20 +4,14 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.Collections;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     // This method is necessary to pass the score to other activity
@@ -70,34 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 Intent songToPlay = new Intent(MainActivity.this, NowPlaying.class);
                 Bundle b = new Bundle();
                 b.putString("title", songTitle);
+
                 b.putString("artist", artistName);
                 b.putInt("lyric", songLyric);
                 songToPlay.putExtra(SONG_DATA, b);
                 startActivity(songToPlay);
             }
         });
-
-//        // For when search form is used
-//        EditText songSearch = findViewById(R.id.search_form);
-//        songSearch.addTextChangedListener(new TextWatcher() {
-//            @Override
-//            public void onTextChanged(CharSequence searchInput, int arg1, int arg2, int arg3) {
-//                adapter.getFilter().filter(searchInput);
-//                listView.setAdapter(adapter);
-//            }
-//
-//            @Override
-//            public void beforeTextChanged(CharSequence arg0, int arg1, int arg2, int arg3) {
-//                // Nothing
-//            }
-//            @Override
-//            public void afterTextChanged(Editable arg0) {
-//                // Nothing
-//            }
-//
-//        });
-
-
 
         // For when the Now playing area is clicked on
         LinearLayout nowPlaying = findViewById(R.id.nav_bottom_view);
@@ -125,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
 
         // The method will be executed when ARTISTS area is clicked
         TextView artists = findViewById(R.id.sort_artists);
@@ -168,29 +140,5 @@ public class MainActivity extends AppCompatActivity {
                 listView.setAdapter(adapter);
             }
         });
-
-//        // Method to sort songs by artist name
-//        private void sortByArtist() {
-//            Collections.sort(mSong, new Comparator<Song>() {
-//                @Override
-//                public int compare(Song o1, Song o2) {
-//                    return o1.getArtistName().compareTo(o2.getArtistName());
-//                }
-//            });
-//
-//            mListViewAdapter.notifyDataSetChanged();
-//        }
-
-//        // Method to sort songs by album name
-//        private void sortByAlbum() {
-//            Collections.sort(mSong, new Comparator<Song>() {
-//                @Override
-//                public int compare(Song o1, Song o2) {
-//                    return o1.getAlbumName().compareTo(o2.getArtistName());
-//                }
-//            });
-//
-//            mListViewAdapter.notifyDataSetChanged();
-//        }
     }
 }
